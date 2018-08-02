@@ -1,0 +1,36 @@
+//- you might be asking yourself..."why would he build it that way?!"
+//- yeah, I dont know either
+
+- var quarter = [
+-   ['w3','','','l2','','',''],
+-   ['','w2','','','','l3',''],
+-   ['','','w2','','','','l2'],
+-   ['l2','','','w2','','',''],
+-   [' ','','','','w2','',' '],
+-   ['','l3','','','','l3',''],
+-   ['','','l2','','','','l2']
+- ]
+
+- var center = ['w3','','','l2','','','']
+
+table
+  each row, index in quarter
+    tr
+      each col in row
+        td(class=col)
+      td(class=center[index])
+      each col in row.reverse()
+        td(class=col)
+  tr
+    each col in center
+      td(class=col)
+    td.star
+    each col in center.reverse()
+      td(class=col)
+  each row, index in quarter.reverse()
+    tr
+      each col in row.reverse()
+        td(class=col)
+      td(class=center[index])
+      each col in row.reverse()
+        td(class=col)
